@@ -29,6 +29,7 @@ public class CalendarFragment extends Fragment{
     public static int month1;
     public static int day1;
     Dialog popup01, popup02;
+    //jk
 
     public TextView diaryTextView;
     TextView date_txt;
