@@ -19,5 +19,5 @@ dependencyResolutionManagement {
 //        mavenCentral()
 //    }
 //}
-rootProject.name= 'Personal_Trainer'
+rootProject.name= "Personal_Trainer"
 include ':app'
