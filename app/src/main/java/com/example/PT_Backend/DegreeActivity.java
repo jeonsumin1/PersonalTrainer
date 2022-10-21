@@ -38,7 +38,7 @@ public class DegreeActivity extends AppCompatActivity {
             }
         });
 
-        // 동의 버튼 두 개 클릭시 전체동의 클릭
+        // 동의 버튼 두 개 클릭시 전체동의 클릭하기
         CheckBtn1.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
             public void onClick(View v) {
