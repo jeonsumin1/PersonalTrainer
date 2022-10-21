@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.Personal_Trainer">
+    package="com.example.PT_Backend">
 
     <!-- 인터넷 권한 설정 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,13 +19,13 @@
         android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="PT_Backend"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Personal_Trainer"
         android:usesCleartextTraffic="true"
         tools:targetApi="m"> <!-- http 보안관련 -->
-        <activity android:name="com.example.Personal_Trainer.MainActivity"
+        <activity android:name="com.example.PT_Backend.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,32 +33,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.Personal_Trainer.MainActivity2" > </activity>
-        <activity android:name="com.example.Personal_Trainer.CalendarFragment"
+        <activity android:name="com.example.PT_Backend.MainActivity2" > </activity>
+        <activity android:name="com.example.PT_Backend.CalendarFragment"
             tools:ignore="Instantiatable"> </activity>
-        <activity android:name="com.example.Personal_Trainer.RegisterActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.RegisterCompleteActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.RegisterUpdateActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.SettingActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.CameraActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.CameraCheckActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.UpdateActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.UpdateInfoActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.CenterActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.DegreeActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.DegreeContentActivity1" > </activity>
-        <activity android:name="com.example.Personal_Trainer.DegreeContentActivity2" > </activity>
-        <activity android:name="com.example.Personal_Trainer.DeleteActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.DietActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.InBodyUpdateActivity1" > </activity>
-        <activity android:name="com.example.Personal_Trainer.InBodyUpdateActivity3" > </activity>
-        <activity android:name="com.example.Personal_Trainer.InBodyUpdateActivity2" > </activity>
-        <activity android:name="com.example.Personal_Trainer.InBodyWriteActivity1" > </activity>
-        <activity android:name="com.example.Personal_Trainer.InBodyWriteActivity3" > </activity>
-        <activity android:name="com.example.Personal_Trainer.InBodyWriteActivity2" > </activity>
-        <activity android:name="com.example.Personal_Trainer.LoginActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.NoticeActivity" > </activity>
-        <activity android:name="com.example.Personal_Trainer.Signup_Php_Mysql" />
+        <activity android:name="com.example.PT_Backend.RegisterActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.RegisterCompleteActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.RegisterUpdateActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.SettingActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.CameraActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.CameraCheckActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.UpdateActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.UpdateInfoActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.CenterActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.DegreeActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.DegreeContentActivity1" > </activity>
+        <activity android:name="com.example.PT_Backend.DegreeContentActivity2" > </activity>
+        <activity android:name="com.example.PT_Backend.DeleteActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.DietActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.InBodyUpdateActivity1" > </activity>
+        <activity android:name="com.example.PT_Backend.InBodyUpdateActivity3" > </activity>
+        <activity android:name="com.example.PT_Backend.InBodyUpdateActivity2" > </activity>
+        <activity android:name="com.example.PT_Backend.InBodyWriteActivity1" > </activity>
+        <activity android:name="com.example.PT_Backend.InBodyWriteActivity3" > </activity>
+        <activity android:name="com.example.PT_Backend.InBodyWriteActivity2" > </activity>
+        <activity android:name="com.example.PT_Backend.LoginActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.NoticeActivity" > </activity>
+        <activity android:name="com.example.PT_Backend.Signup_Php_Mysql" />
         <activity
             android:name="com.soundcloud.android.crop.CropImageActivity"
             android:screenOrientation="portrait"
@@ -66,13 +66,13 @@
              />
 
         <!-- 팝업 Activity -->
-        <activity android:name="com.example.Personal_Trainer.ImagePopupActivity"
+        <activity android:name="com.example.PT_Backend.ImagePopupActivity"
             android:theme="@android:style/Theme.Dialog" />
 
         <!-- 사진 촬영을 위한 provide -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.Personal_Trainer.provider"
+            android:authorities="com.example.PT_Backend.provider"
             android:exported="false"
             android:grantUriPermissions="true">
 

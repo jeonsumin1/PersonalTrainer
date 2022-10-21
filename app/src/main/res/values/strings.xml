@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Personal_Trainer</string>
+    <string name="app_name">PT_Backend</string>
     <string name="custom_close_text">Custom Close</string>
 
     <string name="rationale_title">Permission required</string>

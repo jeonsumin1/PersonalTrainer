@@ -11,7 +11,7 @@ android {
     compileSdk 32 //28
 
     defaultConfig {
-        applicationId "com.example.Personal_Trainer"
+        applicationId "com.example.PT_Backend"
         minSdk 21
         targetSdk 32
         versionCode 1
