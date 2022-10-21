@@ -32,7 +32,7 @@ public class CameraCheckActivity extends AppCompatActivity {
 //        String fat= bundle.getString("fat");
 //        weightView.setText(weight);
 //        muscleView.setText(muscle);
- //       fatView.setText(fat);g
+ //       fatView.setText(fat);
 
         save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
