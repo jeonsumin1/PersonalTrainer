@@ -1,55 +1,60 @@
 package com.example.Personal_Trainer;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 
 public class RegisterUpdateActivity extends AppCompatActivity {
 
-    private TextView et_id, et_pass, et_pass2, et_name, et_email, et_birth, et_height;
+//    private TextView signup_id, signup_name, signup_email, et_name, et_email, et_birth, et_height;
+    private EditText et_id, et_name, et_email, et_birth, et_height;
     private Button Success;
     private RadioGroup et_gender;
 
-    final static private String URL = "http://suminpt.dothome.co.kr/LoginPT2.php";
-
+    public void Back(View view){
+        super.onBackPressed();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registerupdate);
 
-        et_id=findViewById(R.id.et_id);
-        et_pass=findViewById(R.id.et_pass);
-        et_pass2=findViewById(R.id.et_pass2);
-        et_name=findViewById(R.id.et_name);
-        et_email=findViewById(R.id.et_email);
-//        et_gender=findViewById(R.id.et_gender);
-        et_birth=findViewById(R.id.et_birth);
-        et_height=findViewById(R.id.et_height);
-
+        // 회원아이디
+        et_id= (EditText) findViewById(R.id.et_id);
         Intent intent = getIntent();
         String userID=intent.getStringExtra("userID");
-        String userPassword=intent.getStringExtra("userPassword");
-        String userPassword2=intent.getStringExtra("userPassword2");
-        String userName=intent.getStringExtra("userName");
-        String userEmail=intent.getStringExtra("userEmail");
-//        String userGender=intent.getStringExtra("userGender");
-        String userBirth=intent.getStringExtra("userBirth");
-        String userHeight=intent.getStringExtra("userHeight");
-
         et_id.setText(userID);
-        et_pass.setText(userPassword);
-        et_pass2.setText(userPassword2);
+
+        // 회원 이름
+        et_name= (EditText) findViewById(R.id.et_name);
+        String userName=intent.getStringExtra("userName");
         et_name.setText(userName);
+
+        // 이메일
+        et_email= (EditText) findViewById(R.id.et_email);
+        String userEmail=intent.getStringExtra("userEmail");
         et_email.setText(userEmail);
-//        et_gender.setCe(userGender);
+
+        // Birth
+        et_birth= (EditText) findViewById(R.id.et_birth);
+        String userBirth=intent.getStringExtra("userBirth");
         et_birth.setText(userBirth);
+
+        // Height
+        TextView et_height= (EditText) findViewById(R.id.et_height);
+        String userHeight=intent.getStringExtra("userHeight");
         et_height.setText(userHeight);
+
 
 
         Success = findViewById(R.id.btn_register);
@@ -63,12 +68,4 @@ public class RegisterUpdateActivity extends AppCompatActivity {
 
     }
 
-    // btnRegisterUpdateComplete(회원정보 수정 완료) 버튼 클릭시,
-    // 마이 페이지로 이동
-
-
-//    public void btnRegisterUpdateComplete(View view){
-//        Intent intent=new Intent(getApplicationContext(), MainActivity2.class);
-//        startActivityForResult(intent, 0);
-//    }
 }

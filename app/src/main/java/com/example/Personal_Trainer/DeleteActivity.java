@@ -2,24 +2,66 @@ package com.example.Personal_Trainer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class DeleteActivity extends AppCompatActivity {
 
 //    private EditText et_id, et_pass,et_pass2, et_name, et_email, et_birth, et_height;
+    private EditText signup_id;
+    private TextView UserId;
 //    private String et_gender;
 //    private Button deleteDel;
 //
 //    private boolean validate = false;
 //    private AlertDialog dialog;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete);
-
+//
+//    private Button deleteButton;
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_delete);
+//
+//        Activity v = new Activity();
+//        final TextView userID = (TextView)v.findViewById(R.id.UserId);
+//
+//        Button deleteButton = (Button) findViewById(R.id.deleteButton);
+//        deleteButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                Response.Listener<String> responseListener = new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        try{
+//                            JSONObject jsonResponse = new JSONObject(response);
+//                            boolean success = jsonResponse.getBoolean("success");
+//                            // 받아온 값이 success면 정상적으로 서버로부터 값을 받은 것을 의미함
+//                            if(success){
+//
+//                            }
+//                        }
+//                        catch(Exception e){
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                };
+//                DeleteRequest deleteRequest = new DeleteRequest(userID.getText().toString(), responseListener);
+//                RequestQueue queue = Volley.newRequestQueue(DeleteActivity.this);
+//                queue.add(deleteRequest);
+//            }
+//        });
 //        et_id = findViewById(R.id.et_id);
 //        et_pass = findViewById(R.id.et_pass);
 //        et_pass2 = findViewById(R.id.et_pass2);
@@ -68,7 +110,7 @@ public class DeleteActivity extends AppCompatActivity {
 //
 //            }
 //        });
-    }
+//    }
 
     // 회원탈퇴
     public void delete(View view){
@@ -135,9 +177,6 @@ public class DeleteActivity extends AppCompatActivity {
 //                })
 //                .show();
 //    }
-
-
-
 
 
 }

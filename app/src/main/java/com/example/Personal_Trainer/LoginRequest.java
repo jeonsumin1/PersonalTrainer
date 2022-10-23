@@ -1,4 +1,4 @@
-package com.example.PersonalTrainer;
+package com.example.Personal_Trainer;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;

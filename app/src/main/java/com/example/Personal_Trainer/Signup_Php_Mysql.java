@@ -12,11 +12,22 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -38,16 +49,25 @@ public class Signup_Php_Mysql extends AppCompatActivity implements AdapterView.O
     private TextView signup_name;
     private TextView signup_email;
     private TextView signup_date;
-    private Button signup_button;
+    private Button signup_button,validateButton;
     private TextView signup_height;
     private TextView signup_gender;
     private ImageView back;
+    private AlertDialog dialog;
+    private boolean validate=false;
+    private String userGender;
+
+
     private Spinner spinner;
     private ImageView imageView2;
 
 
     private TextView mTextViewResult;
 
+    // 뒤로가기 버튼
+    public void Back(View view){
+        super.onBackPressed();
+    }
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -56,40 +76,85 @@ public class Signup_Php_Mysql extends AppCompatActivity implements AdapterView.O
 
         setContentView(R.layout.sign_up);
 
-//        spinner = findViewById(R.id.spinner1);
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.question, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
-//        spinner.setOnItemSelectedListener(this);
-
-
         signup_id = (EditText) findViewById(R.id.signup_id);
         signup_pwd = (EditText) findViewById(R.id.signup_pwd);
         signup_pwd2 = (EditText) findViewById(R.id.signup_pwd2);
         signup_name = (EditText) findViewById(R.id.signup_name);
         signup_email = (EditText) findViewById(R.id.signup_email);
-        signup_gender = (EditText) findViewById(R.id.signup_gender);
+
+//        signup_gender = (EditText) findViewById(R.id.signup_gender);
         signup_date = (EditText) findViewById(R.id.signup_date);
         signup_height = (EditText) findViewById(R.id.signup_height);
         signup_button = (Button) findViewById(R.id.signup_button);
 //        back = (ImageView) findViewById(R.id.back);
-        // imageView2 = (ImageView) findViewById(R.id.imageView2);
-
-//        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
-//
-//        mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
-
-//        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
-//
-//        mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
+        final Button validateButton = (Button) findViewById(R.id.validateButton);
 
 
-//        back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
+
+        RadioGroup genderGroup = (RadioGroup)findViewById(R.id.genderGroup);
+
+        //라디오버튼이 눌리면 값을 바꿔주는 부분
+        genderGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                RadioButton genderButton = (RadioButton)findViewById(i);
+                int genderGroupID = genderGroup.getCheckedRadioButtonId();
+                userGender = ((RadioButton)findViewById(genderGroupID)).getText().toString();//초기화 값을 지정해줌
+                userGender = genderButton.getText().toString();
+            }
+        });
+
+
+        validateButton.setOnClickListener(new View.OnClickListener() {//id중복체크
+            @Override
+            public void onClick(View view) {
+                String userID=signup_id.getText().toString();
+                if(validate)
+                {
+                    return;
+                }
+                if(userID.equals("")){
+                    AlertDialog.Builder builder=new AlertDialog.Builder( Signup_Php_Mysql.this );
+                    dialog=builder.setMessage("아이디를 입력해주세요.")
+                            .setPositiveButton("확인",null)
+                            .create();
+                    dialog.show();
+                    return;
+                }
+                Response.Listener<String> responseListener=new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse=new JSONObject(response);
+                            boolean success=jsonResponse.getBoolean("success");
+                            if(success){
+                                AlertDialog.Builder builder=new AlertDialog.Builder( Signup_Php_Mysql.this );
+                                dialog=builder.setMessage("사용할 수 있는 아이디입니다.")
+                                        .setPositiveButton("확인",null)
+                                        .create();
+                                dialog.show();
+                                signup_id.setEnabled(false);
+                                validate=true;
+                                validateButton.setText("확인");
+                            }
+                            else{
+                                AlertDialog.Builder builder=new AlertDialog.Builder( Signup_Php_Mysql.this );
+                                dialog=builder.setMessage("사용할 수 없는 아이디입니다.")
+                                        .setNegativeButton("확인",null)
+                                        .create();
+                                dialog.show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                ValidateRequest validateRequest=new ValidateRequest(userID, responseListener);
+                RequestQueue queue= Volley.newRequestQueue(Signup_Php_Mysql.this);
+                queue.add(validateRequest);
+
+            }
+        });
 
 
         signup_button.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +166,9 @@ public class Signup_Php_Mysql extends AppCompatActivity implements AdapterView.O
                 String confirm_password = signup_pwd2.getText().toString().trim();
                 String userName = signup_name.getText().toString().trim();
                 String userEmail = signup_email.getText().toString().trim();
-                String userGender = signup_gender.getText().toString().trim();
+                int genderGroupID = genderGroup.getCheckedRadioButtonId();
+                userGender = ((RadioButton)findViewById(genderGroupID)).getText().toString();//초기화 값을 지정해줌
+//                String userGender = signup_gender.getText().toString().trim();
                 String userBirth = signup_date.getText().toString().trim();
                 String userHeight = signup_height.getText().toString().trim() ;
 

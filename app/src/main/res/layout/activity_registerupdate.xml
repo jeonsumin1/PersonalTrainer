@@ -6,20 +6,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/aaa">
 
-
-    <ImageButton
-        android:id="@+id/degreecontent2_btn"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="42dp"
         android:layout_marginTop="55dp"
-        android:rotation="-180"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.17"
+        android:onClick="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_next7_89412"
-        app:tint="#FFFFFF"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/back_icon" />
 
     <EditText
         android:id="@+id/et_id"
@@ -156,7 +153,6 @@
         android:text="회원정보수정"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/degreecontent2_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
