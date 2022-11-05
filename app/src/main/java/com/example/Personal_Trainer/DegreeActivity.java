@@ -91,7 +91,7 @@ public class DegreeActivity extends AppCompatActivity {
 
     // 확인 버튼
     public void degreefinish_btn(View view){
-        Intent intent=new Intent(getApplicationContext(), RegisterActivity.class);
+        Intent intent=new Intent(getApplicationContext(), Signup_Php_Mysql.class);
         startActivityForResult(intent, 0);
     }
 

@@ -49,11 +49,11 @@ public class DietActivity extends AppCompatActivity {
 //        save_Btn = findViewById(R.id.save_Btn);
 //        del_Btn = findViewById(R.id.del_Btn);
 //        cha_Btn = findViewById(R.id.cha_Btn);
-        textView2 = findViewById(R.id.textView2);
-        contextEditText = findViewById(R.id.contextEditText);
+//        textView2 = findViewById(R.id.textView2);
+//        contextEditText = findViewById(R.id.contextEditText);
 
         textView23 = findViewById(R.id.dietDate);
-        CalendarView calendarView=findViewById(R.id.calendarView);
+//        CalendarView calendarView=findViewById(R.id.calendarView);
 
         // * 사진 등록
         ImageView imageView = (ImageView) findViewById(R.id.imageView10);

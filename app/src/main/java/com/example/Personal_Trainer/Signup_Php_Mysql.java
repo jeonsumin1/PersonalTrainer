@@ -1,6 +1,5 @@
 package com.example.Personal_Trainer;
 
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -55,7 +54,7 @@ public class Signup_Php_Mysql extends AppCompatActivity implements AdapterView.O
     private ImageView back;
     private AlertDialog dialog;
     private boolean validate=false;
-    private String userGender;
+    public static String userGender;
 
 
     private Spinner spinner;
@@ -63,6 +62,16 @@ public class Signup_Php_Mysql extends AppCompatActivity implements AdapterView.O
 
 
     private TextView mTextViewResult;
+
+    public static String userID;
+    public static String userPassword;
+    public static String confirm_password ;
+    public static String userName;
+    public static String userEmail;
+    public static int genderGroupID;
+
+    public static String userBirth ;
+    public static String userHeight ;
 
     // 뒤로가기 버튼
     public void Back(View view){
@@ -161,18 +170,15 @@ public class Signup_Php_Mysql extends AppCompatActivity implements AdapterView.O
             @Override
             public void onClick(View v) {
 
-                String userID = signup_id.getText().toString().trim();
-                String userPassword = signup_pwd.getText().toString().trim();
-                String confirm_password = signup_pwd2.getText().toString().trim();
-                String userName = signup_name.getText().toString().trim();
-                String userEmail = signup_email.getText().toString().trim();
-                int genderGroupID = genderGroup.getCheckedRadioButtonId();
+                userID = signup_id.getText().toString().trim();
+                userPassword = signup_pwd.getText().toString().trim();
+                confirm_password = signup_pwd2.getText().toString().trim();
+                userName = signup_name.getText().toString().trim();
+                userEmail = signup_email.getText().toString().trim();
+                genderGroupID = genderGroup.getCheckedRadioButtonId();
                 userGender = ((RadioButton)findViewById(genderGroupID)).getText().toString();//초기화 값을 지정해줌
-//                String userGender = signup_gender.getText().toString().trim();
-                String userBirth = signup_date.getText().toString().trim();
-                String userHeight = signup_height.getText().toString().trim() ;
-
-//                String userGender = spinner.getSelectedItem().toString().trim();
+                userBirth = signup_date.getText().toString().trim();
+                userHeight = signup_height.getText().toString().trim() ;
 
 
                 //회원가입을 할 때 예외 처리를 해준 것이다.

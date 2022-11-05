@@ -73,6 +73,7 @@
 
         <HorizontalScrollView
 
+            android:id="@+id/horizontalScrollView2"
             android:layout_width="315dp"
             android:layout_height="273dp"
             android:layout_marginTop="12dp"
@@ -191,6 +192,17 @@
             android:text="체지방량"
             app:layout_constraintStart_toStartOf="@+id/text_muscle"
             app:layout_constraintTop_toBottomOf="@+id/text_muscle" />
+
+        <Button
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
