@@ -63,5 +63,6 @@ Personal Trainer은 비용을 지불하고 PT를 받지 않더라도 집에서�
 
 ## 📎 Deliverables
 > [PersonalTrainer-Demo영상](https://youtu.be/vmKLAw3qtXc)
+
 ![mvp](https://user-images.githubusercontent.com/113801496/199274798-91a9d083-9eea-4bd0-bf24-6ea7011ce9f8.PNG)
 ![ocr 실행화면](https://user-images.githubusercontent.com/113801496/199274851-cc2a6b11-5ad9-41bc-849c-b80d8087c482.PNG)
