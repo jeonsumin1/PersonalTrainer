@@ -38,7 +38,7 @@ public class DegreeActivity extends AppCompatActivity {
             }
         });
 
-        // 동의 버튼 두 개 클릭시 전체동의 클릭하기
+        // 동의 버튼 두 개 클릭시 전체동의 클릭
         CheckBtn1.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +91,7 @@ public class DegreeActivity extends AppCompatActivity {
 
     // 확인 버튼
     public void degreefinish_btn(View view){
-        Intent intent=new Intent(getApplicationContext(), RegisterActivity.class);
+        Intent intent=new Intent(getApplicationContext(), Signup_Php_Mysql.class);
         startActivityForResult(intent, 0);
     }
 

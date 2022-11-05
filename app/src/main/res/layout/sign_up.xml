@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/aaa">
 
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="55dp"
+        android:onClick="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_icon" />
+
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
@@ -79,22 +91,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <android.widget.Button
-        android:id="@+id/btnPwdCheck"
-        android:layout_width="63dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="34dp"
-        android:background="@drawable/button_round"
-        android:text="확인"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/signup_pwd"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <EditText
         android:id="@+id/signup_name"
         android:layout_width="234dp"
@@ -102,7 +98,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint=" 이름을 입력해주세요."
+        android:hint=" 회원 이름"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,24 +123,6 @@
         app:layout_constraintTop_toBottomOf="@+id/signup_name"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/signup_date"
-        android:layout_width="234dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:hint=" 생년월일         ex) 19990101"
-        android:inputType="date"
-
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_gender"
-        tools:ignore="MissingConstraints" />
-
 
     <!--    <Spinner-->
     <!--        android:id="@+id/spinner1"-->
@@ -159,21 +137,42 @@
 
     <!--    </Spinner>-->
 
+
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/signup_gender"-->
+    <!--        android:layout_width="234dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:backgroundTint="#FFFFFF"-->
+    <!--        android:ems="10"-->
+    <!--        android:hint=" 성별                        ex) 남/여"-->
+    <!--        android:inputType="text"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.367"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/signup_email"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+
     <EditText
-        android:id="@+id/signup_gender"
+        android:id="@+id/signup_date"
         android:layout_width="234dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint=" 성별                        ex) 남/여"
-        android:inputType="text"
+        android:hint=" 생년월일         ex) 19990101"
+        android:inputType="date"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.367"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_email"
+        app:layout_constraintTop_toBottomOf="@+id/genderGroup"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -192,6 +191,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_date"
         tools:ignore="MissingConstraints" />
+
+
+    <RadioGroup
+        android:id="@+id/genderGroup"
+        android:layout_width="234dp"
+        android:layout_height="47dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_email">
+
+        <RadioButton
+            android:id="@+id/genderWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/genderMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남"
+            android:layout_weight="1"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/signup_button"
@@ -230,5 +258,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_height" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

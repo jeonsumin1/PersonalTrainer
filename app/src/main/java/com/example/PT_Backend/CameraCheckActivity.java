@@ -27,12 +27,12 @@ public class CameraCheckActivity extends AppCompatActivity {
 //        EditText fatView =(EditText)findViewById(R.id.editTextNumber3);
 //        Intent intent = getIntent();
 //        Bundle bundle = intent.getExtras();
- //       String weight= bundle.getString("weight");
+        //       String weight= bundle.getString("weight");
 //        String muscle= bundle.getString("muscle");
 //        String fat= bundle.getString("fat");
 //        weightView.setText(weight);
 //        muscleView.setText(muscle);
- //       fatView.setText(fat);
+        //       fatView.setText(fat);
 
         save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ public class CameraCheckActivity extends AppCompatActivity {
                 Intent intent = new Intent(CameraCheckActivity.this, MainActivity2.class);
                 startActivity(intent);
 
-                EditText weight = (EditText) findViewById(R.id.updateWeight);
+                EditText weight = (EditText) findViewById(R.id.updateWeightv1);
                 EditText muscle = (EditText) findViewById(R.id.muscle);
                 EditText fat = (EditText) findViewById(R.id.check_fat);
                 // 체중 가져오기
@@ -50,10 +50,19 @@ public class CameraCheckActivity extends AppCompatActivity {
                 getMuscle = muscle.getText().toString();
                 // 체지방량 가져오기
                 getFat = fat.getText().toString();
+
+                cameracheck();
+                InbodyCategory.main();
             }
         });
 
 
+    }
+
+    public void cameracheck() {
+        MainpageFragment.MainWeight=getWeight;
+        MainpageFragment.MainMuscle=getMuscle;
+        MainpageFragment.MainFat=getFat;
     }
 
 

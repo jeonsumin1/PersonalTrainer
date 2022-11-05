@@ -1,54 +1,42 @@
 package com.example.PT_Backend;
 
-import java.util.Scanner;
-
 public class InbodyCategory {
-    public static void main(String[] args) {
+    public static void main() {
 
-        Scanner POWERSCAN = new Scanner(System.in);
-        String sex;
-        float height; // 키
-        float weight; // 몸무게
-        float BMI1; // BMI
+        String sex = Signup_Php_Mysql.userGender;
+
+        // 키 height
+        String strheight = Signup_Php_Mysql.userHeight;
+        float height=Float.parseFloat(strheight);
+        //몸무게 weight
+        String strweight = CameraCheckActivity.getWeight;
+        float weight = Float.parseFloat(strweight);
+
+        // BMI
+        float BMI1;
         float BMI;
-        float skeletal_muscle_mass1; // 골격근
-        float fat;
-        float muscle; // 골격근률
-        float bodyfat1; // 체지방률
-        float bodyfat;
+        BMI1 = (float) ((float) weight / (height * 0.01 * height * 0.01));
+        BMI = Math.round(BMI1 * 10 / 10.0);
 
-        System.out.println("성별? ");
-        sex = POWERSCAN.next();
+        // 골격근량 skeletal_muscle_mass1
+        String strmuscle=CameraCheckActivity.getMuscle;
+        float skeletal_muscle_mass1=Float.parseFloat(strmuscle);
 
-        System.out.println("키는? ");
-        height = POWERSCAN.nextFloat();
-
-        System.out.println("몸무게는? ");
-        weight = POWERSCAN.nextFloat();
-
-        // System.out.println("BMI눈? ");
-
-        System.out.println("골격근량은? ");
-        skeletal_muscle_mass1 = POWERSCAN.nextFloat();
-
-        //골격근률
+        // 골격근률 muscle
+        float muscle;
         float skelatal_muscle_mass=(float) (skeletal_muscle_mass1 / (float) weight)*100;
         muscle = Math.round(skelatal_muscle_mass * 10 / 10.0);
 
+        //체지방량 fat
+        String strfat=CameraCheckActivity.getFat;
+        float fat=Float.parseFloat(strfat);
 
-        System.out.println("체지방량은? ");
-        fat = POWERSCAN.nextFloat();
-
-        //체지방률
+        // 체지방률 bodyfat
+        float bodyfat1;
+        float bodyfat;
         bodyfat1 = (float) (fat / (float) weight)*100;
-        //소수점 한자리
         bodyfat = Math.round(bodyfat1 * 10 / 10.0);
-        System.out.println("골격근률:"+muscle);
-        System.out.println("체지방률:"+bodyfat);
 
-        BMI1 = (float) ((float) weight / (height * 0.01 * height * 0.01));
-        BMI = Math.round(BMI1 * 10 / 10.0);
-        System.out.println("BMI:"+BMI);
 
 
         if ((sex.equals("여성"))) {
