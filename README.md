@@ -34,7 +34,7 @@ Personal Trainer은 비용을 지불하고 PT를 받지 않더라도 집에서�
 ### ✔️ Used Technique
 | Full Stack | Technique | Role Officer |
 | :--------------------------: | :-----------------------------------------------: | :------------------------------: |
-| <center> Front-End </center> | <center> Android Studio </center> | <center> 이예진, 서문정 </center> |
+| <center> Front-End </center> | <center> Android Studio </center> | <center> 이예진, 서문정, 이수화 </center> |
 | <center>  Back-End </center> | <center> PHP </center> | <center> 유민영, 전수민 </center> |
 
 ### ⚙️ Develop Environment
