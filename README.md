@@ -43,6 +43,10 @@ Personal Trainer은 비용을 지불하고 PT를 받지 않더라도 집에서�
 - **Database** : phpmyadmin
 - **Server** : AWS EC2 ubuntu
 
+### 📌 Business Model Canvas
+![image](https://user-images.githubusercontent.com/89902489/199335848-07c9114e-a181-497e-95ac-c3dfb3176604.png)
+<br>
+
 ### 📌 Development Skills
 ##### 안드로이드 앱 구현 기술
 - 식단표, 일정관리, 데이터 베이스 등 사용자 중심의 UI/UX를 위한 안드로이드 기반 애플리케이션 구현 기술
