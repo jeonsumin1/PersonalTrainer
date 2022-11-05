@@ -29,7 +29,7 @@ Personal Trainer은 비용을 지불하고 PT를 받지 않더라도 집에서�
 * 22.04.01 - 22.10.31
 
 ### 🧑‍🤝‍🧑 Organization
-![image](https://user-images.githubusercontent.com/89902489/199480098-c3386f4f-4c72-483a-8ac8-5f3c88d6b502.png)
+![image](https://user-images.githubusercontent.com/89902489/200104227-841de55a-350f-432c-91a4-5d024177fcb7.png)
 
 ### ✔️ Used Technique
 | Full Stack | Technique | Role Officer |
