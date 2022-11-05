@@ -24,7 +24,7 @@ public class DataActivity extends AppCompatActivity {
     Button insertBtn;
 
     private static String IP = "3.38.94.242";
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
