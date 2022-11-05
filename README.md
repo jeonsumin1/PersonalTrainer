@@ -1,3 +1,6 @@
+<div align=center>
+   <img src="https://capsule-render.vercel.app/api?type=waving&color=C9D6FF&fontColor=FFFFFF&height=280&text=PersonalTrainer&fontSize=90&animation=fadeIn&fontAlignY=38&desc=에뚜왈&descAlignY=51&descAlign=62" /></div>
+   
 # PersonalTrainer
 
 ###  👪 team member
