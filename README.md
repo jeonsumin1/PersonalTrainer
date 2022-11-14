@@ -24,6 +24,8 @@ OCR을 기반으로 인바디 이미지 인식에 따른 개인맞춤형 식단�
 
 ### 🕰️ Develop Period
 * 22.04.01 - 22.10.31
+![image](https://user-images.githubusercontent.com/89902489/199335382-db12c2e4-9574-4911-9d25-3966071f1c84.png)
+<br>
 
 ### 🧑‍🤝‍🧑 Organization
 ![image](https://user-images.githubusercontent.com/89902489/200104227-841de55a-350f-432c-91a4-5d024177fcb7.png)
