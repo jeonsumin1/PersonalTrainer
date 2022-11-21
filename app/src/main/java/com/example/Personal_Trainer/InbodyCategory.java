@@ -1,6 +1,7 @@
-package com.example.Personal_Trainer;
+package com.example.pt_dfinal;
 
 import java.util.Scanner;
+
 
 public class InbodyCategory {
     public static void main(String[] args) {
@@ -51,83 +52,84 @@ public class InbodyCategory {
         System.out.println("BMI:"+BMI);
 
 
+
         if ((sex.equals("여성"))) {
             if ((18.5 <= BMI) && (BMI <= 23.0)) {
 
                 if ((26.5 <= muscle) && (0.0 <= bodyfat) &&(bodyfat <= 34.9)) {
-                    System.out.print("표준체중 강인형");
+                    System.out.println("a"); // 표준체중 강인형
 
                 } else if ((0.0 <= muscle) && (bodyfat >= 35.0)) {
-                    System.out.println("표준체중 비만형");
+                    System.out.println("b"); // 표준체중 비만형
 
                 } else if ((26.4>= muscle) && (0.0 <= bodyfat) &&(bodyfat <= 34.9)) {
-                    System.out.print("표준체중 허약형");
+                    System.out.print("c"); // 표준체중 허약형
 
                 } else
-                    System.out.println("입력 오류.");
+                    System.out.println("입력 오류."); // Null?
 
             } else if ((18.5 > BMI)) {
                 if ((26.4 >= muscle) && (0.0 <= bodyfat)&& (bodyfat <= 34.9)) {
-                    System.out.print("저체중 허약형");
+                    System.out.print("e"); // 저체중 허약형
 
                 } else if ((26.5 <=muscle) && (0.0 <= bodyfat) && (bodyfat <= 34.9)) {
-                    System.out.println("저체중 강인형");
+                    System.out.println("d"); // 저체중 강인형
 
                 } else
-                    System.out.println("입력 오류.");
+                    System.out.println("입력 오류."); // Null?
             } else if ((23.0 < BMI)) {
                 if ((26.4 >= muscle) && (0.0 <= bodyfat) &&(bodyfat <= 34.9)) {
-                    System.out.print("과체중 허약형");
+                    System.out.print("h"); // 과체중 허약형
 
                 } else if ((26.5 <= muscle) && (0.0 <= bodyfat) && (bodyfat <= 34.9)) {
-                    System.out.println("과체중 강인형");
+                    System.out.println("f"); // 과체중 강인형
 
                 } else if ((0.0 <= muscle) && (bodyfat >= 35.0)) {
-                    System.out.print("과체중 비만형");
+                    System.out.print("g"); // 과체중 비만형
 
                 } else
-                    System.out.println("입력 오류.");
+                    System.out.println("입력 오류."); // Null?
             } else {
-                System.out.println("입력 오류.");
+                System.out.println("입력 오류."); // Null?
             }
         }else if((sex.equals("남성"))) {
             if ((18.5 <= BMI) && (BMI <= 23.0)) {
 
                 if ((32.0 <= muscle) && (0.0 <= bodyfat) &&(bodyfat <= 24.9)) {
-                    System.out.print("표준체중 강인형");
+                    System.out.print("a"); // 표준체중 강인형
 
                 } else if ((0.0 <= muscle) && (bodyfat >= 25.0)) {
-                    System.out.println("표준체중 비만형");
+                    System.out.println("b"); // 표준체중 비만형
 
                 } else if ((31.9>= muscle) && (0.0 <= bodyfat) &&(bodyfat <= 24.9)) {
-                    System.out.print("표준체중 허약형");
+                    System.out.print("c"); // 표준체중 허약형
 
                 } else
-                    System.out.println("입력 오류.");
+                    System.out.println("입력 오류."); // Null?
 
             } else if ((18.5 > BMI)) {
                 if ((31.9 >= muscle) && (0.0 <= bodyfat)&& (bodyfat <= 24.9)) {
-                    System.out.print("저체중 허약형");
+                    System.out.print("e"); // 저체중 허약형
 
                 } else if ((32.0 <=muscle) && (0.0 <= bodyfat) && (bodyfat <= 24.9)) {
-                    System.out.println("저체중 강인형");
+                    System.out.println("d"); // 저체중 강인형
 
                 } else
-                    System.out.println("입력 오류.");
+                    System.out.println("입력 오류."); // Null?
             } else if ((23.0 < BMI)) {
                 if ((31.9>= muscle) && (0.0 <= bodyfat) &&(bodyfat <= 24.9)) {
-                    System.out.print("과체중 허약형");
+                    System.out.print("h"); // 과체중 허약형
 
                 } else if ((32.0 <= muscle) && (0.0 <= bodyfat) && (bodyfat <= 24.9)) {
-                    System.out.println("과체중 강인형");
+                    System.out.println("f"); // 과체중 강인형
 
                 } else if ((0.0 <= muscle) && (bodyfat >= 25.0)) {
-                    System.out.print("과체중 비만형");
+                    System.out.print("g"); // 과체중 비만형
 
                 } else
-                    System.out.println("입력 오류.");
+                    System.out.println("입력 오류."); // Null?
             } else {
-                System.out.println("입력 오류.");
+                System.out.println("입력 오류."); // Null?
             }
 
 
